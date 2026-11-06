@@ -108,14 +108,26 @@ h1,h2,h3,h4{margin:0}
 .demo-tab:hover{border-color:#c9a54b;color:#fff}
 .demo-tab.active{background:linear-gradient(135deg,#1a2940,#16223a);border-color:#c9a54b;color:#fff}
 .demo-tab .tab-num{font-size:13px;color:#c9a54b;font-weight:800}
-.demo-stage{position:relative;max-width:1100px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #26364c;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
+.demo-stage{position:relative;max-width:1400px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #26364c;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
 .demo-panel{display:none;animation:fade-in .5s ease}
 .demo-panel.active{display:block}
 @keyframes fade-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-.demo-panel img{width:100%;display:block}
-.demo-caption{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1100px;margin:32px auto 0}
+.demo-panel img{width:100%;display:block;cursor:zoom-in;transition:transform .3s}
+.demo-panel img:hover{transform:scale(1.01)}
+.demo-caption{display:grid;grid-template-columns:repeat(3,auto);gap:48px;max-width:1400px;margin:32px auto 0;justify-content:center}
+.demo-caption .col{display:none}
+.demo-caption .col.active{display:block}
 .demo-caption .col h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;color:#fff;margin-bottom:10px}
 .demo-caption .col p{font-size:16px;color:#a7b3c2;margin:0;line-height:1.6}
+
+/* ===== Lightbox ===== */
+.lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(5,10,18,.92);backdrop-filter:blur(8px)}
+.lightbox.open{display:flex}
+.lightbox-content{max-width:95vw;max-height:92vh;overflow:hidden;border-radius:12px;box-shadow:0 40px 120px -30px rgba(0,0,0,.9);animation:lightbox-in .25s ease}
+@keyframes lightbox-in{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.lightbox-content img{display:block;width:100%;height:auto;max-height:92vh;object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:28px;width:48px;height:48px;border:0;background:rgba(201,165,75,.15);border:1px solid rgba(201,165,75,.3);border-radius:50%;color:#c9a54b;font-size:28px;line-height:48px;text-align:center;cursor:pointer;transition:background .2s}
+.lightbox-close:hover{background:rgba(201,165,75,.25)}
 
 /* ===== Feature Cards ===== */
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
@@ -412,7 +424,7 @@ h1,h2,h3,h4{margin:0}
       </div>
     </div>
     <div class="demo-caption">
-      <div class="col" data-demo-caption="sales" style="display:block">
+      <div class="col active" data-demo-caption="sales" style="display:block">
         <h3>Win the Job</h3>
         <p>Turn an inquiry into a signed scope without leaving the platform. Send branded proposals, track client responses, and move the deal through your pipeline &mdash; all in one CRM.</p>
       </div>
@@ -512,6 +524,32 @@ h1,h2,h3,h4{margin:0}
             <div class="feat-item"><div class="check-sm"></div><span>Draft proposals &amp; reports</span></div>
             <div class="feat-item"><div class="check-sm"></div><span>Research &amp; client intelligence</span></div>
             <div class="feat-item"><div class="check-sm"></div><span>Wingman AI &mdash; internal copilot</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Executive Dashboard overview"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Operations</div>
+          <h3>Stay Ready</h3>
+          <p>Know which aircraft and pilots are current before the job, not after. Equipment tracking, maintenance schedules, and certification expiry in one view.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Equipment &amp; battery tracking</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Maintenance schedules</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Part 107 compliance tracking</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-img"><img src="assets/flight-planning.png" alt="Flight Planning with waypoints and airspace"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Compliance</div>
+          <h3>Stay Compliant</h3>
+          <p>Track FAA Part 107 certifications, log incidents, run audits, and maintain a clean risk register. Every flight documented and every certificate current.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>FAA Part 107 compliance</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Risk register &amp; audits</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Incident tracking</span></div>
           </div>
         </div>
       </div>
@@ -954,6 +992,14 @@ h1,h2,h3,h4{margin:0}
   </form>
 </dialog>
 
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" class="lightbox" onclick="if(event.target===this) this.classList.remove('open')">
+  <div class="lightbox-content">
+    <img id="lightbox-img" alt="Screenshot">
+    <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open')" aria-label="Close">&times;</button>
+  </div>
+</div>
+
 <script>
 // ===== Scroll Reveal =====
 (function(){
@@ -1001,6 +1047,35 @@ h1,h2,h3,h4{margin:0}
     captions.forEach(function(c){ c.style.display = c.getAttribute('data-demo-caption')===target ? 'block' : 'none'; });
   }
   tabs.forEach(function(tab){ tab.addEventListener('click', function(){ activate(tab); }); });
+})();
+
+// ===== Lightbox =====
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  if(!lb || !lbImg) return;
+  function open(src, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || 'Screenshot';
+    lb.classList.add('open');
+  }
+  // Demo panel images
+  document.querySelectorAll('.demo-panel img').forEach(function(img){
+    img.addEventListener('click', function(){ open(img.src, img.alt); });
+  });
+  // Feature card images
+  document.querySelectorAll('.feat-card .feat-img img').forEach(function(img){
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function(){ open(img.src, img.alt); });
+  });
+  // Problem section screenshot
+  var problemImg = document.querySelector('.problem-grid img');
+  if(problemImg){
+    problemImg.style.cursor = 'zoom-in';
+    problemImg.addEventListener('click', function(){ open(problemImg.src, problemImg.alt); });
+  }
+  // Keyboard close
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') lb.classList.remove('open'); });
 })();
 
 // ===== FAQ Accordion =====
