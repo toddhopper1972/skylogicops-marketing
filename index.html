@@ -145,7 +145,7 @@ h1,h2,h3,h4{margin:0}
 .feat-item .check-sm{width:8px;height:8px;border-right:2px solid #c9a54b;border-bottom:2px solid #c9a54b;transform:rotate(45deg) translateY(-3px);flex:none}
 
 /* ===== Module Grid ===== */
-.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
+.mod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:stretch}
 .mod-card{background:#121d2b;border:1px solid #22324a;border-radius:10px;padding:32px 26px;display:flex;flex-direction:column}
 .mod-card-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
 .mod-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;line-height:1.1;color:#fff}
@@ -265,7 +265,7 @@ h1,h2,h3,h4{margin:0}
   .site-nav{display:none}
   .mobile-toggle{display:block}
   .price-grid{grid-template-columns:repeat(2,1fr)}
-  .mod-grid{grid-template-columns:1fr 1fr}
+  .mod-grid{grid-template-columns:1fr}
   .lang-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -1054,10 +1054,21 @@ h1,h2,h3,h4{margin:0}
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lightbox-img');
   if(!lb || !lbImg) return;
+  var isOpen = false;
   function open(src, alt){
     lbImg.src = src;
     lbImg.alt = alt || 'Screenshot';
     lb.classList.add('open');
+    isOpen = true;
+    // Push a history state so the back button closes the lightbox instead of navigating away
+    history.pushState({lightbox: true}, '', location.pathname + '#lightbox');
+  }
+  function close(){
+    if(!isOpen) return;
+    lb.classList.remove('open');
+    isOpen = false;
+    // If the URL has #lightbox, replace it back to clean URL
+    if(location.hash === '#lightbox') history.replaceState(null, '', location.pathname + location.search);
   }
   // Demo panel images
   document.querySelectorAll('.demo-panel img').forEach(function(img){
@@ -1074,8 +1085,14 @@ h1,h2,h3,h4{margin:0}
     problemImg.style.cursor = 'zoom-in';
     problemImg.addEventListener('click', function(){ open(problemImg.src, problemImg.alt); });
   }
-  // Keyboard close
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') lb.classList.remove('open'); });
+  // Close handlers
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.querySelector('.lightbox-close')?.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  // Back button closes lightbox instead of navigating away
+  window.addEventListener('popstate', function(e){
+    if(isOpen) close();
+  });
 })();
 
 // ===== FAQ Accordion =====
