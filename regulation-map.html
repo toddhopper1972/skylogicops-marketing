@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulation Map — SkyLogic Ops</title>
+<meta name="description" content="FAA Part 107 regulations that SkyLogic Ops helps track, with links to the official eCFR.">
+<link rel="icon" type="image/png" href="assets/skylogic-logo-site.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;padding:0;background:#0d1520;color:#e9edf2;font-family:'Barlow',Helvetica,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:#c9a54b;text-decoration:none;transition:color .2s}
+a:hover{color:#e2c271}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+/* ===== Header ===== */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,15,22,.92);backdrop-filter:blur(14px);border-bottom:1px solid #1c2838}
+.header-inner{max-width:1240px;margin:0 auto;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-link img{height:48px;width:auto}
+.logo-divider{width:1px;height:28px;background:#2c3c52}
+.logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.12em;color:#c9a54b}
+.back-link{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#c9a54b;transition:color .2s}
+.back-link:hover{color:#e2c271}
+
+/* ===== Page Body ===== */
+.page-hero{padding:72px 0 40px}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.18em;color:#c9a54b;text-transform:uppercase;margin-bottom:14px}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(40px,6vw,62px);line-height:1;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.page-lede{font-size:18px;color:#a7b3c2;max-width:680px}
+
+.content{padding:32px 0 80px}
+
+.disclaimer{background:#111b29;border:1px solid #26364c;border-left:4px solid #c9a54b;border-radius:10px;padding:28px 30px;margin:32px 0 48px}
+.disclaimer .label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#c9a54b;margin-bottom:12px}
+.disclaimer p{margin:0;font-size:17px;color:#e9edf2;line-height:1.65}
+
+.reg-intro{font-size:18px;color:#c6cfda;max-width:680px;margin:0 0 40px}
+
+.reg-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.reg-item{background:#121d2b;border:1px solid #22324a;border-radius:10px;padding:24px 26px;transition:border-color .25s,transform .25s}
+.reg-item:hover{border-color:#c9a54b;transform:translateY(-3px)}
+.reg-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.reg-cite{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:#c9a54b;letter-spacing:.04em;flex:none}
+.reg-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:22px;line-height:1.2;text-transform:uppercase;color:#fff}
+.reg-desc{font-size:16px;color:#a7b3c2;margin:10px 0 14px;line-height:1.6}
+.reg-link{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#c9a54b;transition:color .2s}
+.reg-link:hover{color:#e2c271}
+.reg-link .arrow{font-size:14px;transition:transform .2s}
+.reg-link:hover .arrow{transform:translateX(3px)}
+
+.ecfr-note{margin:40px 0 0;padding:24px 26px;background:#111b29;border:1px solid #26364c;border-radius:10px;font-size:16px;color:#a7b3c2;line-height:1.65}
+.ecfr-note a{color:#c9a54b}
+.ecfr-note .note-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#c9a54b;margin-bottom:8px;display:block}
+
+.last-updated{margin:40px 0 0;font-size:14px;color:#7b8a9c}
+
+/* ===== Footer ===== */
+.site-footer{background:#0a0f16;border-top:1px solid #1c2838}
+.footer-inner{max-width:1240px;margin:0 auto;padding:40px 28px}
+.footer-bottom{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#7b8a9c}
+.footer-bottom p{margin:0;max-width:680px}
+
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .page-hero{padding:48px 0 28px}
+  .content{padding:24px 0 56px}
+  .reg-item{padding:20px 20px}
+  .reg-name,.reg-cite{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo-link">
+      <img src="assets/skylogic-logo-site.png" alt="SkyLogic Drones">
+      <div class="logo-divider"></div>
+      <span class="logo-text">OPS</span>
+    </a>
+    <a href="/" class="back-link">&larr; Back to Home</a>
+  </div>
+</header>
+
+<!-- ===== PAGE BODY ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Compliance Reference</div>
+    <h1 class="page-title">Regulation Map</h1>
+    <p class="page-lede">FAA Part 107 regulations that SkyLogic Ops helps you track, each linked to the official text on the Electronic Code of Federal Regulations (eCFR).</p>
+
+    <div class="disclaimer">
+      <div class="label">Disclaimer</div>
+      <p>SkyLogic Ops is an operations management tool. It is not approved, certified, or endorsed by the Federal Aviation Administration. Use of this software does not establish compliance with 14 CFR Part 107 or any other regulation. The Remote Pilot in Command remains solely responsible for the safe and lawful conduct of each flight. The links below point to the official eCFR for reference only; always consult the current regulation text before each flight.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+    <p class="reg-intro">SkyLogic Ops tracks the Part 107 provisions below so your crew can fly with the right records on hand. Each entry links to the full, official regulation on eCFR.</p>
+
+    <ul class="reg-list">
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.9</span><span class="reg-name">Safety event reporting</span></div>
+        <p class="reg-desc">Reporting requirements for accidents and certain safety-related events involving small unmanned aircraft.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.23</span><span class="reg-name">Hazardous operation</span></div>
+        <p class="reg-desc">Prohibitions on careless, reckless, or hazardous operation that endangers people, property, or other aircraft.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.31</span><span class="reg-name">Visual line of sight aircraft operation</span></div>
+        <p class="reg-desc">Requirements for maintaining visual line of sight (VLOS) with the unmanned aircraft at all times during flight.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.51</span><span class="reg-name">Operating limits for small unmanned aircraft</span></div>
+        <p class="reg-desc">Maximum airspeed, maximum altitude (400 feet AGL), and minimum visibility and clearance from clouds.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.55</span><span class="reg-name">Operation over people</span></div>
+        <p class="reg-desc">Categories and conditions for operating a small unmanned aircraft over people, including risk-based operational categories.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.71</span><span class="reg-name">Operations in certain airspace</span></div>
+        <p class="reg-desc">Airspace authorization and coordination requirements for operating in controlled airspace (Class B, C, D, and E).</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.73</span><span class="reg-name">Operations in restricted airspace</span></div>
+        <p class="reg-desc">Permissions and coordination required to operate within restricted, prohibited, or other special-use airspace.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.79</span><span class="reg-name">Operations at night</span></div>
+        <p class="reg-desc">Requirements and anti-collision lighting conditions for operating a small unmanned aircraft at night.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+      <li class="reg-item">
+        <div class="reg-row"><span class="reg-cite">&sect; 107.101</span><span class="reg-name">Operations at certain airworthiness certification levels</span></div>
+        <p class="reg-desc">Operating criteria for unmanned aircraft based on airworthiness certification levels.</p>
+        <a class="reg-link" href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">Read on eCFR <span class="arrow">&rarr;</span></a>
+      </li>
+    </ul>
+
+    <div class="ecfr-note">
+      <span class="note-label">Official Source</span>
+      The complete text of 14 CFR Part 107 is published on the Electronic Code of Federal Regulations at <a href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107" target="_blank" rel="noopener">ecfr.gov</a>. Regulations are amended periodically; always verify the current version before each operation. SkyLogic Ops tracks your records against these references but does not replace the official regulation or the judgment of the Remote Pilot in Command.
+    </div>
+
+    <p class="last-updated">Last updated: November 2026. SkyLogic Drones, LLC. All rights reserved.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>SkyLogic Ops is an operations management tool. It is not approved, certified, or endorsed by the FAA. The Remote Pilot in Command remains solely responsible for the safe and lawful conduct of each flight.</p>
+      <span>&copy; 2026 SkyLogic Drones. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
