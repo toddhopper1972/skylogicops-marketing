@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | SkyLogic Ops</title><meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/assets/skylogic-logo-site.png">
+<style>
+@font-face{font-family:"Barlow";font-weight:500;font-display:swap;src:url("/assets/fonts/barlow-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Barlow Semi Condensed";font-weight:700;font-display:swap;src:url("/assets/fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2")}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0B1726;color:#B4C3D3;font-family:"Barlow",Arial,sans-serif;padding:24px}
+main{max-width:560px}
+img{height:44px;width:auto;margin-bottom:36px}
+h1{margin:0;color:#fff;font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.05}
+p{margin:18px 0 0;font-size:1.1rem;line-height:1.6}
+.a{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+a.b{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:6px;font-weight:500;text-decoration:none;background:#2D8BCA;color:#fff}
+a.g{background:transparent;border:1.5px solid #2E4B6B;color:#E8EEF4}
+</style></head>
+<body><main>
+<img src="/assets/skylogic-logo-site.png" alt="SkyLogic Ops">
+<h1>This page does not exist.</h1>
+<p>The link may be out of date. Use the homepage or the demo to find what you need.</p>
+<div class="a"><a class="b" href="/">Go to the homepage</a><a class="b g" href="/demo.html">Open the interactive demo</a></div>
+</main></body></html>

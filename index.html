@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyLogic Ops — Drone Operations Management Software</title>
+<meta name="description" content="All-in-one drone operations management platform. Proposals, invoicing, CRM, flight logs, equipment tracking, compliance tracking, and more. Join the early-access list for free 14-day trials. Available in English, Spanish, French, and Arabic.">
+<meta name="keywords" content="drone software, drone operations, drone business management, flight log software, drone CRM, drone invoicing">
+<link rel="canonical" href="https://skylogicops.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skylogicops.com/">
+<meta property="og:title" content="SkyLogic Ops — Run Your Drone Business Like a Pro">
+<meta property="og:description" content="All-in-one drone operations management platform with 35 feature modules. Proposals, invoicing, CRM, flight logs, compliance, and more. Early access open for free 14-day trials.">
+<meta property="og:image" content="https://skylogicops.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SkyLogic Ops — Run Your Drone Business Like a Pro">
+<meta name="twitter:description" content="All-in-one drone operations management platform with 35 feature modules. Early access open for free 14-day trials.">
+<meta name="twitter:image" content="https://skylogicops.com/og-image.png">
+<link rel="icon" type="image/png" href="assets/skylogic-logo-site.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;padding:0;background:#0d1520;color:#e9edf2;font-family:'Barlow',Helvetica,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:#c9a54b;text-decoration:none;transition:color .2s}
+a:hover{color:#e2c271}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0}
+
+/* ===== Reveal Animation ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ===== Layout ===== */
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.section{padding:100px 0}
+.bg-alt{background:#111b29}
+.text-center{text-align:center}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.22em;color:#c9a54b;text-transform:uppercase;margin-bottom:18px}
+.h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(52px,7vw,84px);line-height:.98;text-transform:uppercase;color:#fff}
+.h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(36px,4.6vw,54px);line-height:1.05;text-transform:uppercase;color:#fff}
+.lead{font-size:19px;color:#a7b3c2;line-height:1.65;max-width:560px}
+.lead-wide{font-size:19px;color:#a7b3c2;max-width:760px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:18px;letter-spacing:.1em;text-transform:uppercase;padding:16px 34px;border-radius:6px;border:none;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;text-decoration:none}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#d8b65d,#c9a54b);color:#14110a;box-shadow:0 6px 24px -8px rgba(201,165,75,.5)}
+.btn-gold:hover{box-shadow:0 10px 32px -8px rgba(201,165,75,.7);color:#14110a}
+.btn-outline{background:transparent;color:#fff;border:2px solid #d6dde6}
+.btn-outline:hover{border-color:#fff;color:#fff}
+.btn-blue{background:linear-gradient(135deg,#3a9fe6,#2b8fd8);color:#fff;box-shadow:0 6px 24px -8px rgba(43,143,216,.5)}
+.btn-blue:hover{box-shadow:0 10px 32px -8px rgba(43,143,216,.7);color:#fff}
+
+/* ===== Header ===== */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,22,.85);backdrop-filter:blur(14px);border-bottom:1px solid #1c2838;transition:background .3s}
+.site-header.scrolled{background:rgba(10,15,22,.97);box-shadow:0 4px 30px -10px rgba(0,0,0,.6)}
+.header-inner{max-width:1240px;margin:0 auto;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-link img{height:48px;width:auto}
+.logo-divider{width:1px;height:28px;background:#2c3c52}
+.logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;letter-spacing:.12em;color:#c9a54b}
+.site-nav{display:flex;gap:26px;align-items:center}
+.site-nav a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:#e9edf2;transition:color .2s;position:relative}
+.site-nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:#c9a54b;transform:scaleX(0);transition:transform .25s}
+.site-nav a:hover{color:#fff}
+.site-nav a:hover::after{transform:scaleX(1)}
+.header-actions{display:flex;gap:14px;align-items:center}
+.header-actions .signin{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.header-actions .btn{padding:12px 24px;font-size:15px}
+.mobile-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
+
+/* ===== Hero ===== */
+#hero{position:relative;overflow:hidden;min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 0}
+.hero-bg{position:absolute;top:0;right:0;height:100%;width:65%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#0d1520 0%,#0d1520 35%,rgba(13,21,32,.85) 50%,rgba(13,21,32,.25) 72%,rgba(13,21,32,0) 100%),linear-gradient(0deg,rgba(13,21,32,.9) 0%,rgba(13,21,32,0) 40%)}
+.hero-content{position:relative;z-index:2}
+.hero-tag{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.22em;color:#c9a54b;text-transform:uppercase;margin-bottom:22px}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(52px,7.5vw,86px);line-height:.96;text-transform:uppercase;margin:0 0 28px;color:#fff}
+.hero-h1 .accent{color:#2b8fd8;display:block}
+.hero-sub{font-size:20px;line-height:1.6;color:#c6cfda;max-width:580px;margin:0 0 40px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-note{font-size:15px;color:#8e9bab;margin-top:20px}
+
+/* ===== Stats Bar ===== */
+.stats-bar{border-top:1px solid #1c2838;background:rgba(10,15,22,.6)}
+.stats-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 28px;border-right:1px solid #1c2838;text-align:center}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:42px;line-height:1;color:#c9a54b}
+.stat-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#a7b3c2;margin-top:10px}
+
+/* ===== Problem Section ===== */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.check-row{display:flex;gap:16px;align-items:baseline;font-size:17px;color:#e9edf2;margin-bottom:14px}
+.check-mark{width:10px;height:10px;border-right:2px solid #c9a54b;border-bottom:2px solid #c9a54b;transform:rotate(45deg) translateY(-4px);flex:none;margin-top:8px}
+
+/* ===== Interactive Demo ===== */
+#demo{position:relative}
+.demo-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.demo-tab{background:#121d2b;border:1px solid #22324a;border-radius:8px;padding:16px 28px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:#a7b3c2;transition:all .25s;display:flex;align-items:center;gap:10px}
+.demo-tab:hover{border-color:#c9a54b;color:#fff}
+.demo-tab.active{background:linear-gradient(135deg,#1a2940,#16223a);border-color:#c9a54b;color:#fff}
+.demo-tab .tab-num{font-size:13px;color:#c9a54b;font-weight:800}
+.demo-stage{position:relative;max-width:1100px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #26364c;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
+.demo-panel{display:none;animation:fade-in .5s ease}
+.demo-panel.active{display:block}
+@keyframes fade-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.demo-panel img{width:100%;display:block}
+.demo-caption{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1100px;margin:32px auto 0}
+.demo-caption .col h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;color:#fff;margin-bottom:10px}
+.demo-caption .col p{font-size:16px;color:#a7b3c2;margin:0;line-height:1.6}
+
+/* ===== Feature Cards ===== */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.feat-card{background:#121d2b;border:1px solid #22324a;border-radius:10px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.feat-card:hover{transform:translateY(-6px);border-color:#c9a54b;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.feat-card .feat-img{aspect-ratio:16/10;overflow:hidden;background:#0e1724}
+.feat-card .feat-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.feat-card:hover .feat-img img{transform:scale(1.04)}
+.feat-card-body{padding:28px 26px}
+.feat-card-cat{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.18em;color:#c6cfda;text-transform:uppercase;margin-bottom:10px}
+.feat-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;line-height:1.1;color:#fff;margin-bottom:12px}
+.feat-card p{font-size:16px;color:#a7b3c2;margin:0 0 22px;line-height:1.6}
+.feat-list{display:flex;flex-direction:column;gap:12px;border-top:1px solid #22324a;padding-top:22px}
+.feat-item{display:flex;gap:14px;align-items:center;font-size:16px;color:#e9edf2}
+.feat-item .check-sm{width:8px;height:8px;border-right:2px solid #c9a54b;border-bottom:2px solid #c9a54b;transform:rotate(45deg) translateY(-3px);flex:none}
+
+/* ===== Module Grid ===== */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
+.mod-card{background:#121d2b;border:1px solid #22324a;border-radius:10px;padding:32px 26px;display:flex;flex-direction:column}
+.mod-card-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
+.mod-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;line-height:1.1;color:#fff}
+.mod-card .count{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:#c9a54b}
+.mod-card ul{list-style:none;margin:0;padding:0;flex:1}
+.mod-card li{padding:11px 0;border-bottom:1px solid #1f2d40;font-size:15px;color:#d6dde6}
+.mod-card li:last-child{border-bottom:none}
+.mod-card li .sub{display:block;font-size:13px;color:#7f8ea0;margin-top:2px}
+.mod-divider{height:1px;background:#22324a;margin:18px 0}
+.mod-card.wide{grid-column:span 1}
+.mod-card.wide .mod-card-header h3{font-size:19px}
+.mod-card.wide .count{font-size:19px}
+
+/* ===== Languages ===== */
+.lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.lang-card{background:#121d2b;border:1px solid #22324a;border-top:3px solid #c9a54b;border-radius:10px;padding:28px 24px}
+.lang-card .lang-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:38px;line-height:1.15;color:#fff}
+.lang-card .lang-en{margin-top:8px;font-size:15px;letter-spacing:.04em;color:#8e9bab}
+
+/* ===== How It Works ===== */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{text-align:center;padding:12px 20px}
+.step-num{width:76px;height:76px;margin:0 auto 24px;border:2px solid #c9a54b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:30px;color:#c9a54b;background:rgba(201,165,75,.05);transition:transform .3s,box-shadow .3s}
+.step:hover .step-num{transform:scale(1.08);box-shadow:0 0 30px -5px rgba(201,165,75,.4)}
+.step h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:28px;text-transform:uppercase;line-height:1;margin:0 0 12px;color:#fff}
+.step p{font-size:17px;color:#a7b3c2;margin:0 auto;max-width:320px}
+
+/* ===== About ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-creds{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.about-img{aspect-ratio:4/3;border:1px solid #26364c;border-radius:10px;overflow:hidden;margin-bottom:24px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-badge{background:linear-gradient(135deg,#d8b65d,#c9a54b);color:#14110a;border-radius:10px;padding:28px;text-align:center}
+.about-badge .big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:48px;line-height:1}
+.about-badge .small{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;margin-top:10px}
+
+/* ===== Pricing ===== */
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+.price-card{position:relative;background:#121d2b;border:1px solid #22324a;border-radius:10px;padding:36px 28px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.price-card.popular{border:2px solid #c9a54b}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#d8b65d,#c9a54b);color:#14110a;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;border-radius:4px;white-space:nowrap}
+.price-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;margin:0 0 4px;line-height:1;color:#fff}
+.price-sub{font-size:15px;color:#a7b3c2;margin-bottom:24px}
+.price-amt{display:flex;align-items:baseline;gap:4px;margin-bottom:28px}
+.price-amt .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:52px;line-height:1;color:#c9a54b}
+.price-amt .per{font-size:16px;color:#a7b3c2}
+.price-features{display:flex;flex-direction:column;gap:12px;border-top:1px solid #22324a;padding-top:24px;margin-bottom:32px;flex:1}
+.price-features .feat-row{display:flex;gap:12px;align-items:baseline;font-size:15px;color:#e9edf2}
+.price-features .feat-row .check-sm{width:8px;height:8px;border-right:2px solid #c9a54b;border-bottom:2px solid #c9a54b;transform:rotate(45deg) translateY(-3px);flex:none}
+.price-btn{display:block;text-align:center;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:16px;letter-spacing:.1em;text-transform:uppercase;padding:14px;border-radius:6px;transition:all .2s;cursor:pointer;text-decoration:none}
+.price-btn.outline{background:transparent;color:#fff;border:2px solid #d6dde6}
+.price-btn.outline:hover{border-color:#fff;transform:translateY(-2px)}
+.price-btn.solid{background:#c9a54b;color:#14110a;border:2px solid #c9a54b}
+.price-btn.solid:hover{background:#d8b65d;transform:translateY(-2px)}
+
+/* ===== FAQ ===== */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:900px;margin:0 auto}
+.faq-item{background:#121d2b;border:1px solid #22324a;border-radius:10px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:#c9a54b}
+.faq-btn{all:unset;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:21px;letter-spacing:.03em;text-transform:uppercase;color:#fff;box-sizing:border-box}
+.faq-icon{font-family:'Barlow',sans-serif;font-size:26px;font-weight:500;color:#c9a54b;flex:none;transition:transform .25s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-answer-inner{padding:0 26px 24px;font-size:17px;color:#a7b3c2;line-height:1.65}
+.faq-answer-inner a{color:#c9a54b}
+
+/* ===== CTA ===== */
+#cta{background:radial-gradient(ellipse at 50% 0%,#1a2b42 0%,#0d1520 65%)}
+.cta-inner{max-width:900px;margin:0 auto;padding:112px 28px;text-align:center}
+.cta-h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(42px,5.6vw,68px);line-height:1;text-transform:uppercase;margin:0 0 22px;color:#fff}
+.cta-h2 .accent{color:#2b8fd8}
+.cta-sub{font-size:20px;color:#c6cfda;margin:0 0 40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ===== Footer ===== */
+.site-footer{background:#0a0f16;border-top:1px solid #1c2838}
+.footer-inner{max-width:1240px;margin:0 auto;padding:72px 28px 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px}
+.footer-brand{max-width:380px}
+.footer-brand .logo-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.footer-brand .logo-row img{height:56px;width:auto}
+.footer-brand .logo-row span{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.12em;color:#c9a54b}
+.footer-brand p{font-size:15px;color:#8e9bab;margin:0}
+.footer-col{display:flex;flex-direction:column;gap:10px;font-size:15px}
+.footer-col .col-title{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#c9a54b;margin-bottom:6px}
+.footer-col a{color:#a7b3c2;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #1c2838;padding-top:28px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#7b8a9c}
+.footer-bottom p{margin:0;max-width:720px}
+
+/* ===== Early Access Modal ===== */
+.ea{width:min(620px,calc(100% - 32px));max-height:calc(100vh - 32px);padding:0;border:1px solid #2a3b52;border-radius:12px;background:#0f1a28;color:#c6cfda;font-family:'Barlow',sans-serif;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+.ea::backdrop{background:rgba(5,10,18,.82)}
+.ea-form{position:relative;padding:36px 32px 30px}
+.ea-x{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:transparent;color:#a7b3c2;font-size:28px;line-height:1;cursor:pointer;transition:color .2s}
+.ea-x:hover{color:#fff}
+.ea-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#c9a54b;margin-bottom:10px}
+.ea h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:40px;line-height:1;text-transform:uppercase;color:#fff;margin:0 0 14px}
+.ea-lede{font-size:17px;line-height:1.55;margin:0 0 22px}
+.ea-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ea-grid label{display:grid;gap:6px;font-size:14px;font-weight:600;color:#d6dde6}
+.ea-full{grid-column:1/-1}
+.ea input,.ea select,.ea textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid #2a3b52;border-radius:6px;background:#0b1420;color:#fff;font:16px 'Barlow',sans-serif;transition:border-color .2s,box-shadow .2s}
+.ea input:focus,.ea select:focus,.ea textarea:focus{outline:none;border-color:#2b8fd8;box-shadow:0 0 0 3px rgba(43,143,216,.15)}
+.ea-hp{position:absolute;left:-9999px}
+.ea-err{margin:14px 0 0;color:#f0b4a8;font-size:15px}
+.ea-err a{color:#7dbbe6}
+.ea-submit{margin-top:20px;width:100%;padding:16px;border:0;border-radius:6px;background:linear-gradient(135deg,#d8b65d,#c9a54b);color:#14110a;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .15s,box-shadow .2s}
+.ea-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(201,165,75,.5)}
+.ea-submit:disabled{opacity:.6;cursor:wait;transform:none}
+.ea-fine{margin:12px 0 0;font-size:13px;color:#7b8a9c;text-align:center}
+.ea-sig{margin:0;color:#d6dde6;line-height:1.5}
+
+/* ===== Responsive ===== */
+@media(max-width:1100px){
+  .site-nav{display:none}
+  .mobile-toggle{display:block}
+  .price-grid{grid-template-columns:repeat(2,1fr)}
+  .mod-grid{grid-template-columns:1fr 1fr}
+  .lang-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .section{padding:64px 0}
+  .problem-grid{grid-template-columns:1fr;gap:40px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .steps-grid{grid-template-columns:1fr;gap:32px}
+  .demo-caption{grid-template-columns:1fr;gap:24px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid #1c2838}
+  .hero-bg{width:100%;opacity:.4}
+  .hero-overlay{background:linear-gradient(180deg,rgba(13,21,32,.7) 0%,rgba(13,21,32,.9) 60%,#0d1520 100%)}
+}
+@media(max-width:560px){
+  .price-grid{grid-template-columns:1fr}
+  .mod-grid{grid-template-columns:1fr}
+  .lang-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .ea-grid{grid-template-columns:1fr}
+  .ea-form{padding:30px 20px 24px}
+  .ea h2{font-size:32px}
+  .demo-tab{padding:12px 18px;font-size:15px}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid #1c2838}
+  .stat:last-child{border-bottom:none}
+}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(10,15,22,.98);border-bottom:1px solid #1c2838;padding:20px 28px;z-index:99;flex-direction:column;gap:16px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;letter-spacing:.08em;text-transform:uppercase;color:#e9edf2}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="#top" class="logo-link">
+      <img src="assets/skylogic-logo-site.png" alt="SkyLogic Drones">
+      <div class="logo-divider"></div>
+      <span class="logo-text">OPS</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#demo">Demo</a>
+      <a href="#features">Features</a>
+      <a href="#modules">Modules</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://app.skylogicops.com" class="signin">Sign In</a>
+      <a href="#early-access" data-waitlist="Free trial" class="btn btn-gold">Get Early Access</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#demo">Demo</a>
+  <a href="#features">Features</a>
+  <a href="#modules">Modules</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="top" style="position:relative;overflow:hidden">
+  <img src="assets/hero-sky-drone.png" alt="Drone flying over a construction site at sunset" class="hero-bg">
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-content" style="padding-top:120px;padding-bottom:80px">
+    <div style="max-width:620px" class="reveal">
+      <div class="hero-tag">Drone Operations Software &middot; North Houston, Texas</div>
+      <h1 class="hero-h1">Run Your Drone Business<br><span class="accent">Like a Pro</span></h1>
+      <p class="hero-sub">Proposals, invoicing, CRM, flight logs, equipment, and Part 107 compliance in one system. Built by the team behind SkyLogic Drones, for operators who sell results, not flight hours.</p>
+      <div class="hero-cta">
+        <a href="#early-access" data-waitlist="Free trial" class="btn btn-gold">Get Early Access</a>
+        <a href="#demo" class="btn btn-outline">See It In Action</a>
+      </div>
+      <div class="hero-note">Free 14-day trials open soon &middot; Join the early-access list to be first in</div>
+    </div>
+  </div>
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-num">35</div>
+        <div class="stat-label">Modules on Every Plan</div>
+      </div>
+      <div class="stat reveal reveal-delay-1">
+        <div class="stat-num">14 Day</div>
+        <div class="stat-label">Free Trial &middot; No Card</div>
+      </div>
+      <div class="stat reveal reveal-delay-2">
+        <div class="stat-num">Part 107</div>
+        <div class="stat-label">Built by a Certified Operator</div>
+      </div>
+      <div class="stat reveal reveal-delay-3">
+        <div class="stat-num">Houston</div>
+        <div class="stat-label">Built &amp; Supported in Texas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="section bg-alt" style="border-bottom:1px solid #1c2838">
+  <div class="wrap">
+    <div class="problem-grid">
+      <div class="reveal">
+        <div class="eyebrow">The Problem</div>
+        <h2 class="h2">Five tools, one job,<br>and nothing talks to each other</h2>
+        <p class="lead" style="margin-top:24px">A quoting template, an invoicing app, a paper logbook, a spreadsheet of batteries, and a folder of expiring certificates. SkyLogic Ops replaces all five. The job that starts as a proposal ends as a paid invoice with the flight log attached.</p>
+        <div style="margin-top:28px">
+          <div class="check-row"><div class="check-mark"></div><span>One system from first lead to paid invoice</span></div>
+          <div class="check-row"><div class="check-mark"></div><span>Flight logs linked to proposals and billing</span></div>
+          <div class="check-row"><div class="check-mark"></div><span>No double-entry, no lost records</span></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2" style="position:relative">
+        <div style="border:1px solid #26364c;border-radius:12px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)">
+          <img src="assets/dashboard-pulse.png" alt="SkyLogic Ops Today's Pulse dashboard" style="width:100%;display:block">
+        </div>
+        <div style="position:absolute;left:-20px;bottom:-28px;background:linear-gradient(135deg,#d8b65d,#c9a54b);color:#14110a;border-radius:10px;padding:18px 26px;text-align:center;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);display:none"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERACTIVE DEMO ===== -->
+<section id="demo" class="section" style="border-bottom:1px solid #1c2838">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:56px">
+      <div class="eyebrow">Interactive Demo</div>
+      <h2 class="h2">See the Full Job Flow</h2>
+      <p class="lead-wide" style="margin:18px auto 0;max-width:680px">Click through the three stages of a drone job &mdash; from winning the work, to flying the mission, to getting paid. Every step lives in the same system.</p>
+    </div>
+    <div class="demo-tabs reveal reveal-delay-1">
+      <button class="demo-tab active" data-demo-tab="sales"><span class="tab-num">01</span> Sales</button>
+      <button class="demo-tab" data-demo-tab="flight"><span class="tab-num">02</span> Flight</button>
+      <button class="demo-tab" data-demo-tab="billing"><span class="tab-num">03</span> Billing</button>
+    </div>
+    <div class="demo-stage reveal reveal-delay-2">
+      <!-- Sales panel -->
+      <div class="demo-panel active" data-demo-panel="sales">
+        <img src="assets/proposals.png" alt="Proposals module - creating and sending a proposal to a client">
+      </div>
+      <!-- Flight panel -->
+      <div class="demo-panel" data-demo-panel="flight">
+        <img src="assets/flight-planning.png" alt="Flight Planning module - drawing waypoints and planning a mission">
+      </div>
+      <!-- Billing panel -->
+      <div class="demo-panel" data-demo-panel="billing">
+        <img src="assets/crm.png" alt="CRM module - tracking client records and pipeline">
+      </div>
+    </div>
+    <div class="demo-caption">
+      <div class="col" data-demo-caption="sales" style="display:block">
+        <h3>Win the Job</h3>
+        <p>Turn an inquiry into a signed scope without leaving the platform. Send branded proposals, track client responses, and move the deal through your pipeline &mdash; all in one CRM.</p>
+      </div>
+      <div class="col" data-demo-caption="flight" style="display:none">
+        <h3>Fly the Mission</h3>
+        <p>Plan every flight with waypoints, check airspace, run your pre-flight checklist, and log the results. The flight record stays linked to the proposal that won the job.</p>
+      </div>
+      <div class="col" data-demo-caption="billing" style="display:none">
+        <h3>Get Paid</h3>
+        <p>Invoice the day the data ships. Accept payment online through Stripe, PayPal, or Square. The invoice, the flight log, and the client record are all in the same place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features" style="border-bottom:1px solid #1c2838">
+  <div class="wrap section">
+    <div class="text-center reveal" style="margin-bottom:56px">
+      <div class="eyebrow">What It Does</div>
+      <h2 class="h2">One Platform, Lead to Invoice</h2>
+      <p class="lead-wide" style="margin:18px auto 0;max-width:680px">35 integrated modules across the full job lifecycle. Every plan gets all of them.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Today's Pulse dashboard"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Operations</div>
+          <h3>Today's Pulse</h3>
+          <p>Your entire operation at a glance: open proposals, scheduled flights, outstanding invoices, and expiring certifications.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Executive Dashboard</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Live Intel feed</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Telemetry &amp; operations planner</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-img"><img src="assets/proposals.png" alt="Proposals module"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Sales</div>
+          <h3>Win the Job</h3>
+          <p>Turn an inquiry into a signed scope without leaving the platform. Proposals, CRM, and pipeline in one place.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Proposals with e-signature</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>CRM &amp; pipeline management</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Client records &amp; history</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-img"><img src="assets/flight-planning.png" alt="Flight Planning module"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Flight</div>
+          <h3>Fly the Mission</h3>
+          <p>Plan every flight and keep a log that holds up on request. Draw waypoints, check airspace, run your checklist.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Flight Planning with KML export</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Digital flight logs</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Pre-flight check &amp; reports</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-img"><img src="assets/crm.png" alt="CRM module"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Billing</div>
+          <h3>Get Paid</h3>
+          <p>Invoice the day the data ships. Accept payment online through Stripe, PayPal, or Square.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Invoicing &amp; payment tracking</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Stripe, PayPal &amp; Square</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Subcontractors &amp; API</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-img"><img src="assets/live-intel.png" alt="Live Intel module"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Intelligence</div>
+          <h3>Live Intel</h3>
+          <p>Track opportunities, leads, news, and events in real time. Link intel to your CRM when it becomes a pursuit.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Opportunity &amp; lead tracking</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>News &amp; event monitoring</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Market intelligence feed</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-img"><img src="assets/hermes-agent.png" alt="Hermes Agent AI assistant"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">AI Assistant</div>
+          <h3>Hermes Agent</h3>
+          <p>An AI assistant that runs inside your ops. Draft proposals, research clients, generate reports &mdash; it learns from your work.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Draft proposals &amp; reports</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Research &amp; client intelligence</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Wingman AI &mdash; internal copilot</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODULES ===== -->
+<section id="modules" class="section bg-alt" style="border-bottom:1px solid #1c2838">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:56px">
+      <div class="eyebrow">Full Module List</div>
+      <h2 class="h2">All 35 Modules, Every Plan</h2>
+      <p class="lead-wide" style="margin:18px auto 0;max-width:680px">Plans differ by users, aircraft, and support level. Every module below is included on all of them.</p>
+    </div>
+    <div class="mod-grid">
+      <!-- Operations -->
+      <div class="mod-card reveal" style="grid-column:span 1">
+        <div class="mod-card-header">
+          <h3>Operations</h3>
+          <span class="count">11</span>
+        </div>
+        <ul>
+          <li>Today's Pulse</li>
+          <li>Live Intel</li>
+          <li>Executive Dashboard</li>
+          <li>Operations Planner</li>
+          <li>Business Controls</li>
+          <li>Data Lifecycle</li>
+          <li>Work Management<span class="sub">includes capacity planning</span></li>
+          <li>Flight Ops</li>
+          <li>Telemetry</li>
+          <li>Proposals</li>
+          <li>Billing &amp; Revenue</li>
+        </ul>
+      </div>
+      <!-- Safety + Assets -->
+      <div class="mod-card reveal reveal-delay-1" style="grid-column:span 1">
+        <div class="mod-card-header">
+          <h3>Safety</h3>
+          <span class="count">5</span>
+        </div>
+        <ul>
+          <li>FAA Compliance</li>
+          <li>Risk Register</li>
+          <li>Maintenance</li>
+          <li>Audits</li>
+          <li>Incidents</li>
+        </ul>
+        <div class="mod-divider"></div>
+        <div class="mod-card-header">
+          <h3>Assets</h3>
+          <span class="count">6</span>
+        </div>
+        <ul>
+          <li>Equipment<span class="sub">includes battery health</span></li>
+          <li>Documents</li>
+          <li>Guides</li>
+          <li>Prompt Library</li>
+          <li>Flight Intelligence (CoBrain)<span class="sub">secure, shared memory for your ops program</span></li>
+          <li>Photogrammetry</li>
+        </ul>
+      </div>
+      <!-- Commercial + System -->
+      <div class="mod-card reveal reveal-delay-2" style="grid-column:span 1">
+        <div class="mod-card-header">
+          <h3>Commercial &amp; Relationships</h3>
+          <span class="count">4</span>
+        </div>
+        <ul>
+          <li>CRM &amp; Clients</li>
+          <li>Client Experience</li>
+          <li>Social Media</li>
+          <li>Marketing</li>
+        </ul>
+        <div class="mod-divider"></div>
+        <div class="mod-card-header">
+          <h3>System &amp; Integrations</h3>
+          <span class="count">6</span>
+        </div>
+        <ul>
+          <li>Automation</li>
+          <li>Hermes Agent<span class="sub">AI assistant that runs continuously and learns from its own work</span></li>
+          <li>Payment Setup</li>
+          <li>DJI Cloud Sync</li>
+          <li>API Keys</li>
+          <li>Webhooks</li>
+        </ul>
+      </div>
+      <!-- People + Settings -->
+      <div class="mod-card reveal" style="grid-column:span 1">
+        <div class="mod-card-header">
+          <h3>People &amp; Partners</h3>
+          <span class="count">2</span>
+        </div>
+        <ul>
+          <li>Crew Management</li>
+          <li>Subcontractor Reviews</li>
+        </ul>
+        <div class="mod-divider"></div>
+        <div class="mod-card-header">
+          <h3>Settings</h3>
+          <span class="count">1</span>
+        </div>
+        <ul>
+          <li>Settings<span class="sub">region &amp; language, airspace including non-US, security</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LANGUAGES ===== -->
+<section id="languages" class="section" style="border-bottom:1px solid #1c2838">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:48px">
+      <div class="eyebrow">Four Languages</div>
+      <h2 class="h2">Run It in Your Crew's Language</h2>
+      <p class="lead-wide" style="margin:18px auto 0;max-width:680px">Every screen in SkyLogic Ops is available in English, Spanish, French, and Arabic. Office staff and field crews work from the same job records in the language they read best.</p>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card reveal">
+        <div class="lang-name" lang="en" dir="ltr">English</div>
+        <div class="lang-en">English</div>
+      </div>
+      <div class="lang-card reveal reveal-delay-1">
+        <div class="lang-name" lang="es" dir="ltr">Espa&ntilde;ol</div>
+        <div class="lang-en">Spanish</div>
+      </div>
+      <div class="lang-card reveal reveal-delay-2">
+        <div class="lang-name" lang="fr" dir="ltr">Fran&ccedil;ais</div>
+        <div class="lang-en">French</div>
+      </div>
+      <div class="lang-card reveal reveal-delay-3" style="text-align:right">
+        <div class="lang-name" lang="ar" dir="rtl" style="font-family:'Noto Naskh Arabic','Segoe UI','Tahoma',sans-serif">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</div>
+        <div class="lang-en">Arabic</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how" class="section bg-alt" style="border-bottom:1px solid #1c2838">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:56px">
+      <div class="eyebrow">How It Works</div>
+      <h2 class="h2">Up and Running in an Afternoon</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Sign Up</h3>
+        <p>Create your account. 14 days free, no credit card.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3>Add Your Fleet</h3>
+        <p>Register drones, pilots, and certifications once.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h3>Run Your Jobs</h3>
+        <p>Send proposals, log flights, and invoice from one place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" style="border-bottom:1px solid #1c2838">
+  <div class="wrap section">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">Built by an Operator</div>
+        <h2 class="h2" style="margin-bottom:24px">Software From the<br>People Who Fly the Missions</h2>
+        <p style="font-size:18px;color:#c6cfda;margin:0 0 18px">SkyLogic Ops was built by Wesley Smith, owner of SkyLogic Drones, a commercial UAV data firm in North Houston flying construction mapping, telecom, oil &amp; gas, and solar work.</p>
+        <p style="font-size:18px;color:#c6cfda;margin:0 0 30px">Before drones, Wesley spent thirty years in commercial property valuation, where every number had to survive challenge. Ops applies the same standard to your business records: every job documented from proposal to invoice.</p>
+        <div class="about-creds">
+          <div class="check-row"><div class="check-mark"></div><span>Owner-operated commercial UAV firm, FAA Part 107 certified</span></div>
+          <div class="check-row"><div class="check-mark"></div><span>Every module used on live construction, telecom, and energy jobs</span></div>
+          <div class="check-row"><div class="check-mark"></div><span>Thirty years of commercial property valuation behind the records standard</span></div>
+          <div class="check-row"><div class="check-mark"></div><span>Built and supported in North Houston, Texas</span></div>
+        </div>
+        <a href="https://skylogicdrones.com" class="btn btn-outline">Visit SkyLogic Drones</a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="about-img">
+          <img src="assets/wesley-smith.webp" alt="Wesley Smith, owner of SkyLogic Drones, on site with a drone">
+        </div>
+        <div class="about-badge">
+          <div class="big">1 System</div>
+          <div class="small">From First Lead to Paid Invoice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="section bg-alt" style="border-bottom:1px solid #1c2838">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:56px">
+      <div class="eyebrow">Pricing</div>
+      <h2 class="h2">Simple, Transparent Pricing</h2>
+      <p class="lead-wide" style="margin:18px auto 0;max-width:680px">All 35 modules on every plan. You pay for users and aircraft, nothing else.</p>
+    </div>
+    <div class="price-grid">
+      <!-- Solo -->
+      <div class="price-card reveal">
+        <h3>Solo</h3>
+        <div class="price-sub">For solo operators</div>
+        <div class="price-amt"><span class="num">$29</span><span class="per">/mo</span></div>
+        <div class="price-features">
+          <div class="feat-row"><div class="check-sm"></div><span>1 user</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>5 drones</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>All 35 modules in 4 languages</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Flight logs &amp; planning</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Proposals &amp; invoicing</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Email support</span></div>
+        </div>
+        <a href="#early-access" data-waitlist="Solo plan" class="price-btn outline">Join Waitlist</a>
+      </div>
+      <!-- Professional -->
+      <div class="price-card popular reveal reveal-delay-1">
+        <div class="price-badge">Most Popular</div>
+        <h3>Professional</h3>
+        <div class="price-sub">For growing teams</div>
+        <div class="price-amt"><span class="num">$79</span><span class="per">/mo</span></div>
+        <div class="price-features">
+          <div class="feat-row"><div class="check-sm"></div><span>3 users</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>10 drones</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>All 35 modules in 4 languages</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>CRM &amp; pipeline management</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Stripe, PayPal &amp; Square</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Priority support</span></div>
+        </div>
+        <a href="#early-access" data-waitlist="Professional plan" class="price-btn solid">Join Waitlist</a>
+      </div>
+      <!-- Business -->
+      <div class="price-card reveal reveal-delay-2">
+        <h3>Business</h3>
+        <div class="price-sub">For established fleets</div>
+        <div class="price-amt"><span class="num">$199</span><span class="per">/mo</span></div>
+        <div class="price-features">
+          <div class="feat-row"><div class="check-sm"></div><span>10 users</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Unlimited drones</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>All 35 modules in 4 languages</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Subcontractor management</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Webhook &amp; API access</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Priority support</span></div>
+        </div>
+        <a href="#early-access" data-waitlist="Business plan" class="price-btn outline">Join Waitlist</a>
+      </div>
+      <!-- Enterprise -->
+      <div class="price-card reveal reveal-delay-3">
+        <h3>Enterprise</h3>
+        <div class="price-sub">For large operations</div>
+        <div class="price-amt"><span class="num">Custom</span></div>
+        <div class="price-features">
+          <div class="feat-row"><div class="check-sm"></div><span>Unlimited users</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Unlimited drones</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>All 35 modules in 4 languages</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Custom integrations</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>Dedicated support</span></div>
+          <div class="feat-row"><div class="check-sm"></div><span>SLA guarantee</span></div>
+        </div>
+        <a href="mailto:wesley@skylogicdrones.com?subject=SkyLogic%20Ops%20Enterprise" class="price-btn outline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="border-bottom:1px solid #1c2838">
+  <div class="wrap section">
+    <div class="text-center reveal" style="margin-bottom:48px">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="h2">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open reveal">
+        <button class="faq-btn" data-faq-btn>
+          <span>Is there a free trial?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" style="max-height:300px">
+          <div class="faq-answer-inner">
+            <p style="margin:0">Yes. Every plan will start with 14 days free, no credit card required, with full access to all 35 modules. Trials open soon. <a href="#early-access" data-waitlist="Free trial">Join the early-access list</a> and you will be notified first.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-btn" data-faq-btn>
+          <span>Can I change plans at any time?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p style="margin:0">Yes. Upgrade or downgrade from billing settings. Changes take effect immediately and the difference is pro-rated.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-btn" data-faq-btn>
+          <span>Is my data secure?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p style="margin:0">Data is encrypted in transit and at rest, with HTTPS, secure session management, and regular backups. Your data is never shared with third parties.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-btn" data-faq-btn>
+          <span>Can I track my FAA Part 107 certification?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p style="margin:0">Yes. The compliance module logs your Part 107 certificate, tracks expiration dates, and stores your documentation. The software is not FAA-certified; it keeps your own records in order.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-btn" data-faq-btn>
+          <span>Can I manage multiple pilots?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p style="margin:0">Yes. Add pilots up to your plan limit, track their certifications, assign them to jobs, and set permissions and access levels.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-btn" data-faq-btn>
+          <span>Is there an API?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p style="margin:0">Yes. Business and Enterprise plans include full webhook and API access to connect SkyLogic Ops to your existing tools.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-btn" data-faq-btn>
+          <span>What languages does SkyLogic Ops support?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p style="margin:0">English, Spanish, French, and Arabic. Every screen is fully translated, so office staff and field crews can each work in the language they read best.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="eyebrow">Get Started</div>
+    <h2 class="cta-h2">Be First In When <span class="accent">Trials Open</span></h2>
+    <p class="cta-sub">Free 14-day trials with full access to all 35 modules open soon. Join the list and you will hear from me directly when your account is ready.</p>
+    <div class="cta-btns">
+      <a href="#early-access" data-waitlist="Free trial" class="btn btn-gold">Get Early Access</a>
+      <a href="https://app.skylogicops.com" class="btn btn-outline">Sign In</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-row">
+          <img src="assets/skylogic-logo-site.png" alt="SkyLogic">
+          <span>OPS</span>
+        </div>
+        <p>Operations management software for commercial drone businesses. Built by SkyLogic Drones in North Houston, Texas.</p>
+      </div>
+      <div class="footer-col">
+        <div class="col-title">Product</div>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#demo">Demo</a>
+        <a href="#early-access" data-waitlist="Free trial">Early Access</a>
+      </div>
+      <div class="footer-col">
+        <div class="col-title">Contact</div>
+        <a href="mailto:wesley@skylogicdrones.com">wesley@skylogicdrones.com</a>
+        <a href="tel:3465645611">346-564-5611</a>
+        <span style="color:#a7b3c2">North Houston, Texas</span>
+      </div>
+      <div class="footer-col">
+        <div class="col-title">Legal</div>
+        <a href="https://app.skylogicops.com/terms">Terms of Use</a>
+        <a href="https://app.skylogicops.com/regulation-map">Regulation Map</a>
+        <a href="https://app.skylogicops.com">Sign In</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>SkyLogic Ops is an operations management tool. It is not approved, certified, or endorsed by the FAA. The Remote Pilot in Command remains solely responsible for the safe and lawful conduct of each flight.</p>
+      <span>&copy; 2026 SkyLogic Drones. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== EARLY ACCESS MODAL ===== -->
+<dialog id="early-access" class="ea" aria-labelledby="ea-title">
+  <form class="ea-form" id="eaForm" novalidate>
+    <input type="checkbox" name="botcheck" class="ea-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="button" class="ea-x" data-ea-close aria-label="Close">&times;</button>
+    <div class="ea-body" data-ea-body>
+      <div class="ea-label">Early Access</div>
+      <h2 id="ea-title">Trials Open Soon</h2>
+      <p class="ea-lede">SkyLogic Ops is finishing final testing before trials open. Leave your details and I will email you personally when your account is ready. <span data-ea-plan-line></span></p>
+      <div class="ea-grid">
+        <label>Name *<input name="name" required autocomplete="name"></label>
+        <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+        <label>Company<input name="company" autocomplete="organization"></label>
+        <label>Fleet size<select name="fleet_size"><option value="">Select</option><option>1 to 2 drones</option><option>3 to 5 drones</option><option>6 to 10 drones</option><option>More than 10 drones</option></select></label>
+        <label class="ea-full">What would you use it for?<textarea name="message" rows="3" placeholder="Services you offer, tools you use today, anything you want the software to handle"></textarea></label>
+      </div>
+      <p class="ea-err" data-ea-err role="alert" hidden></p>
+      <button type="submit" class="ea-submit" data-ea-submit>Join Early Access</button>
+      <p class="ea-fine">No payment is collected. Your details go only to SkyLogic Drones, LLC.</p>
+    </div>
+    <div class="ea-done" data-ea-done hidden>
+      <div class="ea-label">You Are On The List</div>
+      <h2>Thank you.</h2>
+      <p class="ea-lede">Your request reached me. I will email you when trials open, and I may reach out sooner with a question about your operation.</p>
+      <p class="ea-sig">Wesley (Todd) Smith, Owner<br>SkyLogic Drones, LLC</p>
+      <button type="button" class="ea-submit" data-ea-close>Close</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+// ===== Scroll Reveal =====
+(function(){
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+})();
+
+// ===== Header scroll shadow =====
+(function(){
+  var header = document.getElementById('header');
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      requestAnimationFrame(function(){
+        header.classList.toggle('scrolled', window.scrollY > 20);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+// ===== Mobile menu =====
+(function(){
+  var toggle = document.getElementById('mobileToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(!toggle || !menu) return;
+  toggle.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.remove('open'); }); });
+})();
+
+// ===== Interactive Demo Tabs =====
+(function(){
+  var tabs = document.querySelectorAll('[data-demo-tab]');
+  var panels = document.querySelectorAll('[data-demo-panel]');
+  var captions = document.querySelectorAll('[data-demo-caption]');
+  function activate(tab){
+    var target = tab.getAttribute('data-demo-tab');
+    tabs.forEach(function(t){ t.classList.toggle('active', t===tab); });
+    panels.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-demo-panel')===target); });
+    captions.forEach(function(c){ c.style.display = c.getAttribute('data-demo-caption')===target ? 'block' : 'none'; });
+  }
+  tabs.forEach(function(tab){ tab.addEventListener('click', function(){ activate(tab); }); });
+})();
+
+// ===== FAQ Accordion =====
+(function(){
+  var items = document.querySelectorAll('.faq-item');
+  items.forEach(function(item){
+    var btn = item.querySelector('[data-faq-btn]');
+    var answer = item.querySelector('.faq-answer');
+    var icon = item.querySelector('.faq-icon');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      items.forEach(function(o){
+        if(o!==item){
+          o.classList.remove('open');
+          var a2 = o.querySelector('.faq-answer');
+          a2.style.maxHeight = '0px';
+          var i2 = o.querySelector('.faq-icon');
+          if(i2) i2.textContent = '+';
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        answer.style.maxHeight = '0px';
+        icon.textContent = '+';
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '\u2212';
+      }
+    });
+  });
+  // Open first by default
+  var first = items[0];
+  if(first){
+    var fa = first.querySelector('.faq-answer');
+    var fi = first.querySelector('.faq-icon');
+    fi.textContent = '\u2212';
+    setTimeout(function(){ fa.style.maxHeight = fa.scrollHeight + 'px'; }, 100);
+  }
+})();
+
+// ===== Early Access Modal =====
+(function(){
+  var dlg = document.getElementById('early-access');
+  if(!dlg) return;
+  var form = dlg.querySelector('#eaForm');
+  var planLine = dlg.querySelector('[data-ea-plan-line]');
+  var err = dlg.querySelector('[data-ea-err]');
+  var body = dlg.querySelector('[data-ea-body]');
+  var done = dlg.querySelector('[data-ea-done]');
+  var btn = dlg.querySelector('[data-ea-submit]');
+  var currentInterest = 'Free trial';
+
+  function open(label){
+    label = label || 'Free trial';
+    currentInterest = label;
+    planLine.textContent = /plan$/i.test(label) ? 'You selected the ' + label + '; it will be noted on your request.' : '';
+    body.hidden = false; done.hidden = true; err.hidden = true;
+    if(typeof dlg.showModal === 'function'){ if(!dlg.open) dlg.showModal(); }
+    else { dlg.setAttribute('open',''); }
+    var first = form.querySelector('[name=name]'); if(first) setTimeout(function(){ first.focus(); }, 100);
+  }
+  function close(){
+    if(dlg.open && dlg.close) dlg.close();
+    else dlg.removeAttribute('open');
+    if(location.hash === '#early-access') history.replaceState(null,'',location.pathname+location.search);
+  }
+
+  document.querySelectorAll('[data-waitlist]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      open(a.getAttribute('data-waitlist'));
+    });
+  });
+  dlg.querySelectorAll('[data-ea-close]').forEach(function(b){ b.addEventListener('click', close); });
+  dlg.addEventListener('click', function(e){ if(e.target === dlg) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && dlg.open) close(); });
+  if(location.hash === '#early-access') open('Free trial');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.hidden = true;
+    var name = form.elements.name.value.trim();
+    var email = form.elements.email.value.trim();
+    if(!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      err.textContent = 'Please enter your name and a valid email address.';
+      err.hidden = false; return;
+    }
+    if(form.elements.botcheck.checked) return;
+
+    btn.disabled = true; btn.textContent = 'Sending...';
+
+    // Try posting to the SaaS app's waitlist API
+    var payload = {
+      name: name,
+      email: email,
+      company: form.elements.company.value || '',
+      fleet_size: form.elements.fleet_size.value || '',
+      message: form.elements.message.value || '',
+      interest: currentInterest
+    };
+
+    fetch('https://app.skylogicops.com/api/waitlist', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(r){
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json().catch(function(){ return {success:true}; });
+    }).then(function(){
+      form.reset();
+      body.hidden = true;
+      done.hidden = false;
+    }).catch(function(){
+      // Fallback: try Web3Forms-style email submission
+      var formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('company', form.elements.company.value || '');
+      formData.append('fleet_size', form.elements.fleet_size.value || '');
+      formData.append('message', form.elements.message.value || '');
+      formData.append('interest', currentInterest);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Accept': 'application/json'},
+        body: formData
+      }).then(function(r2){ return r2.json(); }).then(function(d2){
+        if(d2 && d2.success){
+          form.reset(); body.hidden = true; done.hidden = false;
+        } else {
+          throw new Error('fallback failed');
+        }
+      }).catch(function(){
+        // Last resort: open email client
+        var mailBody = 'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + (form.elements.company.value||'') + '\nFleet size: ' + (form.elements.fleet_size.value||'') + '\nInterest: ' + currentInterest + '\n\n' + (form.elements.message.value||'');
+        location.href = 'mailto:wesley@skylogicdrones.com?subject=' + encodeURIComponent('SkyLogic Ops early access request: ' + currentInterest) + '&body=' + encodeURIComponent(mailBody);
+        form.reset(); body.hidden = true; done.hidden = false;
+      });
+    }).then(function(){
+      btn.disabled = false; btn.textContent = 'Join Early Access';
+    });
+  });
+})();
+</script>
+</body>
+</html>
