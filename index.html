@@ -78,8 +78,8 @@ h1,h2,h3,h4{margin:0}
 
 /* ===== Hero ===== */
 #hero{position:relative;overflow:hidden;min-height:640px;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px}
-.hero-bg{position:absolute;top:0;right:0;height:100%;width:65%;object-fit:cover;object-position:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#0d1520 0%,#0d1520 35%,rgba(13,21,32,.85) 50%,rgba(13,21,32,.25) 72%,rgba(13,21,32,0) 100%),linear-gradient(0deg,rgba(13,21,32,.9) 0%,rgba(13,21,32,0) 40%)}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,21,32,.92) 0%,rgba(13,21,32,.85) 30%,rgba(13,21,32,.55) 55%,rgba(13,21,32,.25) 80%,rgba(13,21,32,.1) 100%),linear-gradient(0deg,rgba(13,21,32,.85) 0%,rgba(13,21,32,.2) 50%,rgba(13,21,32,0) 100%)}
 .hero-content{position:relative;z-index:2}
 .hero-tag{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.22em;color:#c9a54b;text-transform:uppercase;margin-bottom:22px}
 .hero-h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(52px,7.5vw,86px);line-height:.96;text-transform:uppercase;margin:0 0 28px;color:#fff}
@@ -338,11 +338,11 @@ h1,h2,h3,h4{margin:0}
 </div>
 
 <!-- ===== HERO ===== -->
-<section id="top" style="position:relative;overflow:hidden">
+<section id="hero">
   <img src="assets/hero-sky-drone.png" alt="Drone flying over a construction site at sunset" class="hero-bg">
   <div class="hero-overlay"></div>
-  <div class="wrap hero-content" style="padding-top:120px;padding-bottom:80px">
-    <div style="max-width:620px" class="reveal">
+  <div class="wrap hero-content">
+    <div style="max-width:620px" class="reveal in">
       <div class="hero-tag">Drone Operations Software &middot; North Houston, Texas</div>
       <h1 class="hero-h1">Run Your Drone Business<br><span class="accent">Like a Pro</span></h1>
       <p class="hero-sub">Proposals, invoicing, CRM, flight logs, equipment, and Part 107 compliance in one system. Built by the team behind SkyLogic Drones, for operators who sell results, not flight hours.</p>
