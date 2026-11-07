@@ -266,6 +266,7 @@ h1,h2,h3,h4{margin:0}
   .mobile-toggle{display:block}
   .price-grid{grid-template-columns:repeat(2,1fr)}
   .mod-grid{grid-template-columns:1fr}
+  .mod-card[style*="grid-template-columns"]{grid-template-columns:1fr!important}
   .lang-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -284,6 +285,7 @@ h1,h2,h3,h4{margin:0}
 @media(max-width:560px){
   .price-grid{grid-template-columns:1fr}
   .mod-grid{grid-template-columns:1fr}
+  .mod-card[style*="grid-template-columns"]{grid-template-columns:1fr!important}
   .lang-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .ea-grid{grid-template-columns:1fr}
@@ -647,28 +649,31 @@ h1,h2,h3,h4{margin:0}
           <li>Agent &amp; Research<span class="sub">Hermes Agent or any LLM provider — bring your own credentials</span></li>
         </ul>
       </div>
-      <!-- System & Integrations + Settings -->
-      <div class="mod-card reveal reveal-delay-1" style="grid-column:span 1">
-        <div class="mod-card-header">
-          <h3>System &amp; Integrations</h3>
-          <span class="count">6</span>
+      <!-- System & Integrations + Settings (full width) -->
+      <div class="mod-card reveal reveal-delay-1" style="grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:28px">
+        <div>
+          <div class="mod-card-header">
+            <h3>System &amp; Integrations</h3>
+            <span class="count">6</span>
+          </div>
+          <ul>
+            <li>Automation</li>
+            <li>Payment Setup</li>
+            <li>Billing &amp; Subscription</li>
+            <li>DJI Cloud Sync</li>
+            <li>API Keys</li>
+            <li>Webhooks</li>
+          </ul>
         </div>
-        <ul>
-          <li>Automation</li>
-          <li>Payment Setup</li>
-          <li>Billing &amp; Subscription</li>
-          <li>DJI Cloud Sync</li>
-          <li>API Keys</li>
-          <li>Webhooks</li>
-        </ul>
-        <div class="mod-divider"></div>
-        <div class="mod-card-header">
-          <h3>Settings</h3>
-          <span class="count">1</span>
+        <div>
+          <div class="mod-card-header">
+            <h3>Settings</h3>
+            <span class="count">1</span>
+          </div>
+          <ul>
+            <li>Settings<span class="sub">region &amp; language, airspace including non-US, security</span></li>
+          </ul>
         </div>
-        <ul>
-          <li>Settings<span class="sub">region &amp; language, airspace including non-US, security</span></li>
-        </ul>
       </div>
     </div>
   </div>
