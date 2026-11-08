@@ -468,6 +468,7 @@ h1,h2,h3,h4{margin:0}
       <p class="lead-wide" style="margin:18px auto 0;max-width:680px">39 integrated modules across the full job lifecycle. Every plan gets all of them.</p>
     </div>
     <div class="feat-grid">
+      <!-- Row 1: Start here → Win work → Plan flight → Check airspace -->
       <div class="feat-card reveal">
         <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Today's Pulse dashboard"></div>
         <div class="feat-card-body">
@@ -507,7 +508,60 @@ h1,h2,h3,h4{margin:0}
           </div>
         </div>
       </div>
+      <div class="feat-card reveal reveal-delay-3">
+        <div class="feat-img"><img src="assets/flight-planning.png" alt="Airspace Intelligence — TFRs, METARs, NOTAMs, LAANC ceiling grid, and Class airspace boundaries on a map"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Safety &amp; Compliance</div>
+          <h3>Airspace Intelligence</h3>
+          <p>Check the airspace before you fly. Live TFRs, METARs, NOTAMs, nearby airports, LAANC ceiling grid, and Class airspace boundaries on a map.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Live TFRs from FAA GeoServer</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>METARs &amp; NOTAMs from AviationWeather.gov</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>LAANC ceiling grid &amp; Class airspace map</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Row 2: Stay compliant → Sync telemetry → Deliver media → Get paid -->
       <div class="feat-card reveal">
+        <div class="feat-img"><img src="assets/flight-planning.png" alt="Flight Planning with waypoints and airspace"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Compliance</div>
+          <h3>Stay Compliant</h3>
+          <p>Track FAA Part 107 certifications, log incidents, run audits, and maintain a clean risk register. Every flight documented and every certificate current.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>FAA Part 107 compliance</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Risk register &amp; audits</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Incident tracking</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Flight Sync — DJI flight log import, telemetry replay, and GPS flight path visualization"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Operations</div>
+          <h3>Flight Sync</h3>
+          <p>Import DJI flight data, review telemetry, and replay GPS flight paths. Flight Sync supplements manual Flight Logs with raw telemetry from your DJI controller.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>DJI flight log import &amp; parsing</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Telemetry replay with GPS track</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Flight path visualization</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-img"><img src="assets/live-intel.png" alt="Media Vault — upload, organize, and securely share job photos and videos with clients"></div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">Client Delivery</div>
+          <h3>Media Vault</h3>
+          <p>Upload, organize, and securely share job photos and videos with clients. Automatic email delivery via revocable share links &mdash; no client login required.</p>
+          <div class="feat-list">
+            <div class="feat-item"><div class="check-sm"></div><span>Cloudflare R2 storage with drag-drop upload</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Revocable share links with automatic email</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Public share viewer with download buttons</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card reveal reveal-delay-3">
         <div class="feat-img"><img src="assets/crm.png" alt="CRM module"></div>
         <div class="feat-card-body">
           <div class="feat-card-cat">Billing</div>
@@ -520,32 +574,7 @@ h1,h2,h3,h4{margin:0}
           </div>
         </div>
       </div>
-      <div class="feat-card reveal reveal-delay-1">
-        <div class="feat-img"><img src="assets/live-intel.png" alt="Live Intel module"></div>
-        <div class="feat-card-body">
-          <div class="feat-card-cat">Intelligence</div>
-          <h3>Live Intel</h3>
-          <p>Track opportunities, leads, news, and events in real time. Use any LLM provider or a dedicated Hermes Agent for market research — each tenant brings their own credentials.</p>
-          <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>Opportunity &amp; lead tracking</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>News &amp; event monitoring</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Provider-agnostic research (Hermes or any LLM + web search)</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="feat-card reveal reveal-delay-2">
-        <div class="feat-img"><img src="assets/hermes-agent.png" alt="Agent & Research AI assistant"></div>
-        <div class="feat-card-body">
-          <div class="feat-card-cat">AI Assistant</div>
-          <h3>Agent &amp; Research</h3>
-          <p>An AI assistant that runs inside your ops. Draft proposals, research clients, generate reports — it learns from your work. Connect any Hermes Agent or OpenAI-compatible LLM provider.</p>
-          <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>Draft proposals &amp; reports</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Research &amp; client intelligence</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Wingman AI &mdash; internal copilot</span></div>
-          </div>
-        </div>
-      </div>
+      <!-- Row 3: Stay ready → Market intelligence → AI assistant → Learn the system -->
       <div class="feat-card reveal">
         <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Executive Dashboard overview"></div>
         <div class="feat-card-body">
@@ -560,57 +589,42 @@ h1,h2,h3,h4{margin:0}
         </div>
       </div>
       <div class="feat-card reveal reveal-delay-1">
-        <div class="feat-img"><img src="assets/flight-planning.png" alt="Flight Planning with waypoints and airspace"></div>
+        <div class="feat-img"><img src="assets/live-intel.png" alt="Live Intel module"></div>
         <div class="feat-card-body">
-          <div class="feat-card-cat">Compliance</div>
-          <h3>Stay Compliant</h3>
-          <p>Track FAA Part 107 certifications, log incidents, run audits, and maintain a clean risk register. Every flight documented and every certificate current.</p>
+          <div class="feat-card-cat">Intelligence</div>
+          <h3>Live Intel</h3>
+          <p>Track opportunities, leads, news, and events in real time. Use any LLM provider or a dedicated Hermes Agent for market research &mdash; each tenant brings their own credentials.</p>
           <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>FAA Part 107 compliance</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Risk register &amp; audits</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Incident tracking</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Opportunity &amp; lead tracking</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>News &amp; event monitoring</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Provider-agnostic research (Hermes or any LLM + web search)</span></div>
           </div>
         </div>
       </div>
-      <!-- Airspace Intelligence -->
       <div class="feat-card reveal reveal-delay-2">
-        <div class="feat-img"><img src="assets/flight-planning.png" alt="Airspace Intelligence — TFRs, METARs, NOTAMs, LAANC ceiling grid, and Class airspace boundaries on a map"></div>
+        <div class="feat-img"><img src="assets/hermes-agent.png" alt="Agent & Research AI assistant"></div>
         <div class="feat-card-body">
-          <div class="feat-card-cat">Safety &amp; Compliance</div>
-          <h3>Airspace Intelligence</h3>
-          <p>Check the airspace before you fly. Live TFRs, METARs, NOTAMs, nearby airports, LAANC ceiling grid, and Class airspace boundaries on a map.</p>
+          <div class="feat-card-cat">AI Assistant</div>
+          <h3>Agent &amp; Research</h3>
+          <p>An AI assistant that runs inside your ops. Draft proposals, research clients, generate reports &mdash; it learns from your work. Connect any Hermes Agent or OpenAI-compatible LLM provider.</p>
           <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>Live TFRs from FAA GeoServer</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>METARs &amp; NOTAMs from AviationWeather.gov</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>LAANC ceiling grid &amp; Class airspace map</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Draft proposals &amp; reports</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Research &amp; client intelligence</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Wingman AI &mdash; internal copilot</span></div>
           </div>
         </div>
       </div>
-      <!-- Media Vault -->
+      <!-- 12th card: Guides & Documentation -->
       <div class="feat-card reveal reveal-delay-3">
-        <div class="feat-img"><img src="assets/live-intel.png" alt="Media Vault — upload, organize, and securely share job photos and videos with clients"></div>
+        <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Guides & Documentation — step-by-step operational guides built into the platform"></div>
         <div class="feat-card-body">
-          <div class="feat-card-cat">Client Delivery</div>
-          <h3>Media Vault</h3>
-          <p>Upload, organize, and securely share job photos and videos with clients. Automatic email delivery via revocable share links &mdash; no client login required.</p>
+          <div class="feat-card-cat">Documentation</div>
+          <h3>Guides &amp; Docs</h3>
+          <p>Built-in, step-by-step operational guides walk every team member through the full job lifecycle &mdash; from first lead to paid invoice. Context-sensitive help available on every page.</p>
           <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>Cloudflare R2 storage with drag-drop upload</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Revocable share links with automatic email</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Public share viewer with download buttons</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- Flight Sync -->
-      <div class="feat-card reveal">
-        <div class="feat-img"><img src="assets/dashboard-pulse.png" alt="Flight Sync — DJI flight log import, telemetry replay, and GPS flight path visualization"></div>
-        <div class="feat-card-body">
-          <div class="feat-card-cat">Operations</div>
-          <h3>Flight Sync</h3>
-          <p>Import DJI flight data, review telemetry, and replay GPS flight paths. Flight Sync supplements manual Flight Logs with raw telemetry from your DJI controller.</p>
-          <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>DJI flight log import &amp; parsing</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Telemetry replay with GPS track</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Flight path visualization</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Step-by-step workflow guides</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Role-based documentation</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Available in English, Spanish, French &amp; Arabic</span></div>
           </div>
         </div>
       </div>
