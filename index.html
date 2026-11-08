@@ -90,7 +90,7 @@ h1,h2,h3,h4{margin:0}
 
 /* ===== Stats Bar ===== */
 .stats-bar{border-top:1px solid #1c2838;background:rgba(10,15,22,.6)}
-.stats-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stats-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
 .stat{padding:30px 28px;border-right:1px solid #1c2838;text-align:center}
 .stat:last-child{border-right:none}
 .stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:42px;line-height:1;color:#c9a54b}
@@ -278,7 +278,10 @@ h1,h2,h3,h4{margin:0}
   .demo-caption{grid-template-columns:1fr;gap:24px}
   .stats-grid{grid-template-columns:1fr 1fr}
   .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid #1c2838}
+  .stat:nth-child(1),.stat:nth-child(2),.stat:nth-child(3){border-bottom:1px solid #1c2838}
+  .stat:nth-child(3){border-right:1px solid #1c2838}
+  .stat:nth-child(odd){border-right:1px solid #1c2838}
+  .stat:nth-child(even){border-right:none}
   .hero-bg{width:100%;opacity:.4}
   .hero-overlay{background:linear-gradient(180deg,rgba(13,21,32,.7) 0%,rgba(13,21,32,.9) 60%,#0d1520 100%)}
   /* Mobile header: hide the CTA button, show Sign In + hamburger only */
@@ -380,6 +383,10 @@ h1,h2,h3,h4{margin:0}
     <div class="stat reveal reveal-delay-3 in">
       <div class="stat-num">Houston</div>
       <div class="stat-label">Built &amp; Supported in Texas</div>
+    </div>
+    <div class="stat reveal reveal-delay-4 in">
+      <div class="stat-num">Any OS</div>
+      <div class="stat-label">Windows, Mac, iPad &amp; Android</div>
     </div>
   </div>
 </div>
