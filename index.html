@@ -10,11 +10,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skylogicops.com/">
 <meta property="og:title" content="SkyLogic Ops&#8482; — Run Your Drone Business Like a Pro">
-<meta property="og:description" content="All-in-one drone operations management platform with 39 feature modules. Proposals, invoicing, CRM, flight logs, compliance, AI agents, and more. Early access open for free 14-day trials.">
+<meta property="og:description" content="All-in-one drone operations management platform with 44 feature modules. Proposals, invoicing, CRM, flight logs, compliance, AI agents, and more. Early access open for free 14-day trials.">
 <meta property="og:image" content="https://skylogicops.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SkyLogic Ops&#8482; — Run Your Drone Business Like a Pro">
-<meta name="twitter:description" content="All-in-one drone operations management platform with 39 feature modules. Early access open for free 14-day trials.">
+<meta name="twitter:description" content="All-in-one drone operations management platform with 44 feature modules. Early access open for free 14-day trials.">
 <meta name="twitter:image" content="https://skylogicops.com/og-image.png">
 <link rel="icon" type="image/png" href="assets/skylogic-logo-site.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -369,7 +369,7 @@ h1,h2,h3,h4{margin:0}
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat reveal in">
-      <div class="stat-num">39</div>
+      <div class="stat-num">44</div>
       <div class="stat-label">Modules on Every Plan</div>
     </div>
     <div class="stat reveal reveal-delay-1 in">
@@ -1358,6 +1358,12 @@ h1,h2,h3,h4{margin:0}
   if(problemImg){
     problemImg.style.cursor = 'zoom-in';
     problemImg.addEventListener('click', function(){ open(problemImg.src, problemImg.alt); });
+  }
+  // Client portal screenshot
+  var clientImg = document.querySelector('img[alt*="Client Dashboard"]');
+  if(clientImg){
+    clientImg.style.cursor = 'zoom-in';
+    clientImg.addEventListener('click', function(){ open(clientImg.src, clientImg.alt); });
   }
   // Close handlers
   lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
