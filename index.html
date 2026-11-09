@@ -407,7 +407,7 @@ h1,h2,h3,h4{margin:0}
       </div>
       <div class="reveal reveal-delay-2" style="position:relative">
         <div style="border:1px solid #26364c;border-radius:12px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)">
-          <img src="assets/screenshots/dashboard-pulse.png" alt="SkyLogic Ops Today's Pulse dashboard" style="width:100%;display:block">
+          <img src="assets/screenshots/today-pulse.png" alt="SkyLogic Ops Today's Pulse dashboard" style="width:100%;display:block">
         </div>
         <div style="position:absolute;left:-20px;bottom:-28px;background:linear-gradient(135deg,#d8b65d,#c9a54b);color:#14110a;border-radius:10px;padding:18px 26px;text-align:center;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);display:none"></div>
       </div>
@@ -532,7 +532,7 @@ h1,h2,h3,h4{margin:0}
           <div class="feat-list">
             <div class="feat-item"><div class="check-sm"></div><span>FAA Part 107 compliance</span></div>
             <div class="feat-item"><div class="check-sm"></div><span>Risk register &amp; audits</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Incident tracking</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Regulatory alerts &amp; incident tracking</span></div>
           </div>
         </div>
       </div>
@@ -571,7 +571,7 @@ h1,h2,h3,h4{margin:0}
           <div class="feat-list">
             <div class="feat-item"><div class="check-sm"></div><span>Invoicing &amp; payment tracking</span></div>
             <div class="feat-item"><div class="check-sm"></div><span>Stripe, PayPal &amp; Square</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Savings estimator, branded PDF exports &amp; API</span></div>
+            <div class="feat-item"><div class="check-sm"></div><span>Savings estimator, branded PDF exports &amp; integrations</span></div>
           </div>
         </div>
       </div>
@@ -626,34 +626,6 @@ h1,h2,h3,h4{margin:0}
             <div class="feat-item"><div class="check-sm"></div><span>Step-by-step workflow guides</span></div>
             <div class="feat-item"><div class="check-sm"></div><span>Role-based documentation</span></div>
             <div class="feat-item"><div class="check-sm"></div><span>Available in English, Spanish, French &amp; Arabic</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- 13th card: Regulatory Notifications -->
-      <div class="feat-card reveal">
-        <div class="feat-img"><img src="assets/screenshots/faa-compliance.png" alt="Regulatory Notifications — aviation authority safety alerts and rule changes per region"></div>
-        <div class="feat-card-body">
-          <div class="feat-card-cat">Compliance</div>
-          <h3>Regulatory Alerts</h3>
-          <p>Stay current with safety alerts, rule changes, and airspace amendments from your aviation authority. Feeds adapt to your region &mdash; FAA, EASA, CAA, or CASA.</p>
-          <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>FAA Safety Team alerts (US)</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>EASA airworthiness directives (Europe)</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>CAA &amp; CASA safety notices (UK &amp; Australia)</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- 14th card: Integrations -->
-      <div class="feat-card reveal reveal-delay-1">
-        <div class="feat-img"><img src="assets/screenshots/billing.png" alt="Integrations — REST API, webhooks, and Zapier setup guides"></div>
-        <div class="feat-card-body">
-          <div class="feat-card-cat">Integrations</div>
-          <h3>Integrations</h3>
-          <p>Connect SkyLogic Ops to the tools you already use. REST API with scoped keys, event-driven webhooks, and setup guides for Zapier, n8n, and Make.</p>
-          <div class="feat-list">
-            <div class="feat-item"><div class="check-sm"></div><span>REST API with scoped keys</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Event-driven webhooks</span></div>
-            <div class="feat-item"><div class="check-sm"></div><span>Zapier, n8n &amp; Make setup guides</span></div>
           </div>
         </div>
       </div>
@@ -1382,29 +1354,29 @@ h1,h2,h3,h4{margin:0}
     clientImg.style.cursor = 'zoom-in';
     clientImg.addEventListener('click', function(){ open(clientImg.src, clientImg.alt); });
   }
-  // Portal gallery (3 screenshots with arrow-key sweep)
-  var portalImages = [
+  // Portal gallery (3 screenshots with arrow-key sweep) — global for onclick access
+  window.portalImages = [
     { src: 'assets/screenshots/client-portal-management.png', alt: 'SkyLogic Ops Client Portal Management' },
     { src: 'assets/screenshots/client-portal-proposals.png', alt: 'SkyLogic Ops Proposals with e-signature and savings estimator' },
     { src: 'assets/screenshots/client-portal-workspaces.png', alt: 'SkyLogic Ops Client Workspaces' }
   ];
-  var galleryIndex = 0;
-  function openPortalGallery(idx) {
-    galleryIndex = idx;
-    showGalleryImage();
-  }
-  function showGalleryImage() {
-    var img = portalImages[galleryIndex];
-    open(img.src, img.alt + ' (' + (galleryIndex + 1) + '/' + portalImages.length + ')');
-  }
-  function galleryNext() {
-    galleryIndex = (galleryIndex + 1) % portalImages.length;
-    showGalleryImage();
-  }
-  function galleryPrev() {
-    galleryIndex = (galleryIndex - 1 + portalImages.length) % portalImages.length;
-    showGalleryImage();
-  }
+  window.galleryIndex = 0;
+  window.openPortalGallery = function(idx) {
+    window.galleryIndex = idx;
+    window.showGalleryImage();
+  };
+  window.showGalleryImage = function() {
+    var img = window.portalImages[window.galleryIndex];
+    open(img.src, img.alt + ' (' + (window.galleryIndex + 1) + '/' + window.portalImages.length + ')');
+  };
+  window.galleryNext = function() {
+    window.galleryIndex = (window.galleryIndex + 1) % window.portalImages.length;
+    window.showGalleryImage();
+  };
+  window.galleryPrev = function() {
+    window.galleryIndex = (window.galleryIndex - 1 + window.portalImages.length) % window.portalImages.length;
+    window.showGalleryImage();
+  };
   // Arrow-key navigation when lightbox is open
   document.addEventListener('keydown', function(e) {
     if (!lb.classList.contains('open')) return;
