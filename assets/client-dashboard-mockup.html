@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Barlow Condensed', 'Inter', -apple-system, sans-serif;
+    background: #0d1014;
+    color: #E8EBF4;
+    padding: 24px;
+    width: 1200px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(148,163,210,0.08);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-badge {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, #1596d2, #164a70);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: white; font-weight: 800;
+  }
+  .logo-text { font-size: 18px; font-weight: 700; color: #E8EBF4; }
+  .logo-sub { font-size: 12px; color: #AAB3C8; }
+  .client-name { text-align: right; }
+  .client-name-label { font-size: 11px; color: #AAB3C8; text-transform: uppercase; letter-spacing: 1px; }
+  .client-name-value { font-size: 16px; font-weight: 600; color: #E8EBF4; margin-top: 4px; }
+
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 14px; font-weight: 700; color: #38BDF8;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+  }
+  .section-icon { width: 16px; height: 16px; }
+
+  .summary-banner {
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.25);
+    border-radius: 10px; padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .summary-label { font-size: 14px; color: #AAB3C8; }
+  .summary-value { font-size: 24px; font-weight: 800; color: #38BDF8; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    background: #0e1a28; border: 1px solid rgba(148,163,210,0.08);
+    border-radius: 10px; padding: 18px;
+  }
+  .card-title { font-size: 15px; font-weight: 600; color: #E8EBF4; margin-bottom: 8px; }
+  .card-meta { font-size: 12px; color: #AAB3C8; margin-bottom: 10px; }
+
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; text-transform: capitalize;
+  }
+  .badge-blue { background: rgba(56,189,248,0.12); color: #38BDF8; border: 1px solid rgba(56,189,248,0.3); }
+  .badge-green { background: rgba(34,197,94,0.12); color: #22C55E; border: 1px solid rgba(34,197,94,0.3); }
+  .badge-gold { background: rgba(201,168,76,0.12); color: #C9A84C; border: 1px solid rgba(201,168,76,0.3); }
+  .badge-red { background: rgba(224,104,72,0.12); color: #E06848; border: 1px solid rgba(224,104,72,0.3); }
+  .badge-muted { background: rgba(148,163,210,0.08); color: #AAB3C8; border: 1px solid rgba(148,163,210,0.12); }
+
+  .table { width: 100%; border-collapse: collapse; }
+  .table th { text-align: left; font-size: 11px; color: #AAB3C8; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid rgba(148,163,210,0.08); text-transform: uppercase; letter-spacing: 0.5px; }
+  .table td { padding: 10px; border-bottom: 1px solid rgba(148,163,210,0.06); font-size: 13px; color: #E8EBF4; }
+  .table td.muted { color: #AAB3C8; }
+  .table td.right { text-align: right; }
+
+  .pay-btn {
+    display: inline-block; padding: 4px 12px; border-radius: 6px;
+    background: #1596d2; color: white; font-size: 12px; font-weight: 600;
+    border: none; cursor: pointer;
+  }
+  .view-link { color: #38BDF8; font-size: 12px; text-decoration: none; }
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(148,163,210,0.15);
+    background: rgba(148,163,210,0.05); color: #AAB3C8; font-size: 11px;
+  }
+
+  .milestone { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #AAB3C8; margin-bottom: 6px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .dot-done { background: #22C55E; }
+  .dot-pending { background: #C9A84C; }
+  .dot-future { background: rgba(148,163,210,0.3); }
+</style></head><body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-badge">SL</div>
+    <div>
+      <div class="logo-text">SkyLogic Ops&#8482;</div>
+      <div class="logo-sub">Client Portal</div>
+    </div>
+  </div>
+  <div class="client-name">
+    <div class="client-name-label">Welcome</div>
+    <div class="client-name-value">Riverside Construction Group</div>
+  </div>
+</div>
+
+<!-- Outstanding Summary -->
+<div class="summary-banner">
+  <div class="summary-label">Outstanding Balance</div>
+  <div class="summary-value">$4,850.00</div>
+</div>
+
+<!-- Projects -->
+<div class="section">
+  <div class="section-title">
+    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M2 6h20M2 12h20M2 18h20"/></svg>
+    Active Projects
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+        <div class="card-title">Riverside Roof Inspection</div>
+        <span class="badge badge-blue">In Progress</span>
+      </div>
+      <div class="card-meta">Started Oct 14 &middot; 3 flights completed &middot; 2 remaining</div>
+      <div class="milestone"><div class="dot dot-done"></div>Site survey complete</div>
+      <div class="milestone"><div class="dot dot-done"></div>Thermal inspection flown</div>
+      <div class="milestone"><div class="dot dot-pending"></div>Data processing</div>
+      <div class="milestone"><div class="dot dot-future"></div>Deliverables ready</div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+        <div class="card-title">Solar Farm Mapping &mdash; Phase 2</div>
+        <span class="badge badge-gold">Quality Review</span>
+      </div>
+      <div class="card-meta">Started Oct 8 &middot; 8 flights completed &middot; data delivered</div>
+      <div class="milestone"><div class="dot dot-done"></div>All flights complete</div>
+      <div class="milestone"><div class="dot dot-done"></div>Orthomosaic generated</div>
+      <div class="milestone"><div class="dot dot-pending"></div>Client review pending</div>
+    </div>
+  </div>
+</div>
+
+<!-- Deliverables -->
+<div class="section">
+  <div class="section-title">
+    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    Deliverables
+  </div>
+  <table class="table">
+    <thead><tr><th>File</th><th>Category</th><th>Date</th><th></th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Riverside_Roof_Orthomosaic.pdf</td>
+        <td class="muted">Inspection Report</td>
+        <td class="muted">Oct 16, 2026</td>
+        <td class="right"><span class="dl-btn">&#11015; Download</span></td>
+      </tr>
+      <tr>
+        <td>Solar_Farm_Phase2_3D_Model.obj</td>
+        <td class="muted">3D Model</td>
+        <td class="muted">Oct 12, 2026</td>
+        <td class="right"><span class="dl-btn">&#11015; Download</span></td>
+      </tr>
+      <tr>
+        <td>Thermal_Inspection_Report.pdf</td>
+        <td class="muted">Thermal Report</td>
+        <td class="muted">Oct 15, 2026</td>
+        <td class="right"><span class="dl-btn">&#11015; Download</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Invoices -->
+<div class="section">
+  <div class="section-title">
+    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+    Invoices
+  </div>
+  <table class="table">
+    <thead><tr><th>Invoice</th><th>Amount</th><th>Status</th><th>Date</th><th></th></tr></thead>
+    <tbody>
+      <tr>
+        <td>INV-2026-0142</td>
+        <td class="right">$2,400.00</td>
+        <td><span class="badge badge-red">Overdue</span></td>
+        <td class="muted">Oct 1, 2026</td>
+        <td class="right"><button class="pay-btn">Pay Now</button></td>
+      </tr>
+      <tr>
+        <td>INV-2026-0156</td>
+        <td class="right">$2,450.00</td>
+        <td><span class="badge badge-blue">Sent</span></td>
+        <td class="muted">Oct 22, 2026</td>
+        <td class="right"><button class="pay-btn">Pay Now</button></td>
+      </tr>
+      <tr>
+        <td>INV-2026-0098</td>
+        <td class="right">$1,200.00</td>
+        <td><span class="badge badge-green">Paid</span></td>
+        <td class="muted">Sep 15, 2026</td>
+        <td class="right"><a class="view-link" href="#">View Invoice &#8599;</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body></html>
